@@ -1,0 +1,311 @@
+Constante Real INFINITO, NULO
+
+// Classe Ponto
+// Atributos: coordenadas X e Y.
+Classe Ponto
+Início
+	Inteiro x, y
+Fim	
+
+// Classe Reta
+// Atributos: pontos P1 e P2.
+Classe Reta
+Início
+	Ponto p1, p2
+	Real m
+	Inteiro b
+
+	// Método
+	Construtor Reta(Ponto p1, Ponto p2)
+	Início
+		Se (reta.p1.x = reta.p2.x)
+			m = INFINITO
+			b = NULO
+		Senão		
+			m = (reta.p1.y - reta.p2.y)/(reta.p1.x - reta.p2.y)			
+			b = -m*reta.p1.x + reta.p1.y					
+		Fim
+	Fim
+Fim	
+
+// Algoritmo Trab01
+// Parâmetros: nomeDoArquivo - arquivo a ser aberto.
+Algoritmo Trab01(Cadeia nomeDoArquivo)
+Início
+	// 1 - Leitura
+	
+	// Instância de um objeto que representa um arquivo com
+	// o nome do parâmetro nomeDoArquivo.
+	Arquivo arq(nomeDoArquivo)
+	
+	// Abertura do arquivo.
+	arq.abrir()
+	
+	// Instância de um fluxo de leitura, orientado a
+	// dados, a partir de arq.
+	FluxoDeLeitura fluxo(arq)
+	
+	// Instância de um objeto lista ligada simples.
+	ListaLigadaSimples retas
+	
+	// Leitura do arquivo, armazenando na lista:
+	
+	// Leitura da primeira linha
+	Reta retaLida <- fluxo.lerLinha()
+	Enquanto ((retaLida.p1.x <> 0) E (retaLida.p1.y <> 0)
+			E (retaLida.p2.x <> 0) E (retaLida.p2.y <> 0))
+	Início
+		// Insere um nó na lista, contendo a reta lida.
+		retas.insereNo(retaLida)
+	
+		// Lê a próxima linha.
+		Reta retaLida <- fluxo.lerLinha()
+	Fim
+	
+	// Fechamento do arquivo.
+	arq.fechar()
+	
+	//---------------------------------------------------//
+	
+	// 2 - Menu
+	ListaLigadaSimples resposta
+	
+	Faça
+		// Leitura do menu.
+		Inteiro opcao = Menu()
+		
+		// Seleção da opção.
+		Selecione(opcao)
+		Início
+			// Opção 1 - Mostrar todas as retas.
+			Caso 1:
+				Mostrar(retas)			
+				Fim
+				
+			// Opção 2 - Mostrar as retas horizontais. 
+			Caso 2: 
+				resposta <- RetasHorizontais(retas)
+				Mostrar(resposta)			
+				Fim
+				
+			// Opção 3 - Mostrar as retas verticais.
+			Caso 3: 
+				resposta <- RetasVerticais(retas)			
+				Mostrar(resposta)			
+				Fim
+				
+			// Opção 4 - Mostrar as retas não horizontais nem verticais.
+			Caso 4: 
+				resposta <- RetasNaoHorizontaisNemVerticais(retas)						
+				Mostrar(resposta)			
+				Fim
+				
+			// Opção 5 - Mostrar as retas que se interceptam.
+			Caso 5: 
+				resposta <- RetasInterceptas(retas)			
+				Mostrar(resposta)			
+				Fim
+				
+			// Opção 6 - Mostrar as retas que formam um polígono fechado.
+			Caso 6: 
+				resposta <- RetasPoligonoFechado(retas)
+				Mostrar(resposta)			
+				Fim
+				
+			// Opção 0 - Fim.
+			Caso 0: 
+				Escreva "Finalizando..."
+				retas.limpar();
+				Fim																				
+				
+			// Caso de erro.
+			Padrão:
+				Escreva "Opção Inválida!"			
+			
+		Fim
+	Enquanto (opcao <> 0)
+	
+Fim
+
+// Método Menu(): Imprime o menu e permite a escolha de uma opção.
+Método Inteiro Menu()
+Início
+	// Declaração de variáveis.
+	Inteiro opcao
+	
+	// Impressão do menu.
+	Escreva "Menu de opções"
+	Escreva "--------------"
+	Escreva "1 - Mostrar todas as retas"
+	Escreva "2 - Mostrar as retas horizontais"
+	Escreva "3 - Mostrar as retas verticais"
+	Escreva "4 - Mostrar as retas não horizontais nem verticais"
+	Escreva "5 - Mostrar as retas que se interceptam"
+	Escreva "6 - Mostrar as retas que formam um polígono fechado"
+	Escreva "0 - Fim"
+	Escreva "Digite a opção desejada: "
+	
+	// Leitura e retorno.
+	Leia opcao
+	Retorne opcao
+Fim
+
+// Método Mostrar(): Exibe o conteúdo de uma lista.
+Método Vazio Mostrar(ListaLigadaSimples lista)
+Início
+	// Obtenção do primeiro elemento da lista.
+	Reta reta = lista.primeiro()
+	
+	// Varredura da lista.
+	Enquanto (reta <> nulo)
+	Início
+		// Escrita da reta.
+		Escreva "P1 = (" + reta.p1.x + ", " + reta.p1.y + ") e " + 
+				"P2 = (" + reta.p2.x + ", " + reta.p2.y + ")"
+	
+		// Obtenção do próximo elemento da lista.
+		reta = lista.proximo()
+	Fim
+Fim
+
+// Método RetasHorizontais(): Obtém uma lista apenas com retas horizontais.
+Método ListaLigadaSimples RetasHorizontais(ListaLigadaSimples retas)
+Início
+	// Lista particular desta tarefa.
+	ListaLigadaSimples resposta
+	
+	// Obtenção do primeiro elemento da lista.	
+	Reta reta = lista.primeiro()
+
+	// Varredura da lista.
+	Enquanto (reta <> nulo)
+	Início
+		Se (reta.p1.y = reta.p2.y)
+			resposta.insereNo(reta)
+	
+		// Obtenção do próximo elemento da lista.
+		reta = lista.proximo()
+	Fim	
+	
+	Retorne resposta
+Fim
+
+// Método RetasVerticais(): Obtém uma lista apenas com retas verticais.
+Método ListaLigadaSimples RetasVerticais(ListaLigadaSimples retas)
+Início
+	// Lista particular desta tarefa.
+	ListaLigadaSimples resposta
+	
+	// Obtenção do primeiro elemento da lista.	
+	Reta reta = lista.primeiro()
+
+	// Varredura da lista.
+	Enquanto (reta <> nulo)
+	Início
+		Se (reta.p1.x = reta.p2.x)
+			resposta.insereNo(reta)
+	
+		// Obtenção do próximo elemento da lista.
+		reta = lista.proximo()
+	Fim	
+	
+	Retorne resposta
+Fim
+
+// Método RetasNaoHorizontaisNemVerticais(): Obtém uma lista apenas com retas não horizontais nem verticais.
+Método ListaLigadaSimples RetasNaoHorizontaisNemVerticais(ListaLigadaSimples retas)
+Início
+	// Lista particular desta tarefa.
+	ListaLigadaSimples resposta
+	
+	// Obtenção do primeiro elemento da lista.	
+	Reta reta = lista.primeiro()
+
+	// Varredura da lista.
+	Enquanto (reta <> nulo)
+	Início
+		Se ((reta.p1.x <> reta.p2.x) E (reta.p1.y <> reta.p2.y))
+			resposta.insereNo(reta)
+	
+		// Obtenção do próximo elemento da lista.
+		reta = lista.proximo()
+	Fim	
+	
+	Retorne resposta
+Fim
+
+// Método RetasInterceptas(): Obtém uma lista apenas com retas que se interceptam
+Método ListaLigadaSimples RetasInterceptas(ListaLigadaSimples lista1)
+Início
+	// Lista particular desta tarefa.
+	ListaLigadaSimples resposta
+	
+	// Copia a lista retas1 em uma nova lista retas2
+	ListaLigadaSimples lista2
+	
+	Reta retaAux = lista1.primeiro()
+	Enquanto (retaAux <> nulo)
+	Início
+		lista2.insereNo(retaAux)
+		retaAux = lista1.proximo()
+	Fim		
+	
+	// Obtenção do primeiro elemento da lista.	
+	Reta reta1 = lista1.primeiro()
+
+	// Varredura da lista para reta1.
+	Enquanto (reta1 <> nulo)
+	Início
+		// Obtenção do primeiro elemento da lista.		
+		reta2 = lista2.primeiro()
+		
+		ListaLigadaSimples respostaReta1		
+		respostaReta1.insereNo(reta1)
+		
+		// Varredura da lista para reta2.
+		Enquanto (reta2 <> nulo)
+		Início
+			// Não compara se for o mesmo objeto de reta.
+			Se (reta1 = reta2)
+				Fim
+				
+			// Compara quanto ao paralelismo.
+			// TODO: VERIFICAR QUANDO M É INFINITO
+			// Paralelo
+			Se ((reta1.m = reta2.m) E (reta1.b <> reta2.b)
+				Fim				
+				
+			// Compara quanto à sobreposição.			
+			Se (reta1.m = reta2.m)
+				//ALGUMA COISA
+				Fim
+			
+			// Compara quanto à interceptação.						
+			Ponto intersecao = Intersecao(reta1, reta2)
+			
+			VerificaInsersecao(reta1, intersecao)
+			
+		
+			// Obtenção do próximo elemento da lista.
+			reta2 = lista2.proximo()
+		
+		Fim	
+		
+		resposta.insereNo(respostaReta1)
+		
+		// Obtenção do próximo elemento da lista.
+		reta1 = lista1.proximo()
+	Fim	
+	
+	Retorne resposta
+Fim
+
+// Método
+Método Ponto Intersecao(Reta reta1, Reta reta2)
+Início
+	Inteiro x = (Inteiro) ((reta2.b - reta1.b)/(reta1.m - reta2.m))
+	Inteiro y = (Inteiro) (reta1.m*x + reta1.b)
+	Ponto inter(x,y)
+	
+	Retorna inter
+Fim

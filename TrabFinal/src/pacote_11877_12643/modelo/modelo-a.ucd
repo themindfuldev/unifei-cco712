@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" name="modelo-a" id="pacote_11877_12643.modelo" metadata="uml2-1.0" initialized="true" tag="1000" key="3230303631303036205472616246696E616C2F746961676F">
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.2/@sourceConnections.1" name="Figura" location="50,50" size="471,223" id="pacote_11877_12643.modelo/Figura" runTimeClassModel="fazTransformacao(Lpacote_11877_12643.modelo.Transformacao;Lpacote_11877_12643.modelo.Ponto;),valida(Lpacote_11877_12643.modelo.Figura;II),listaFormasPlotaveis,add(Lpacote_11877_12643.modelo.FormaPlotavel;),fazTransformacao(Lpacote_11877_12643.modelo.Transformacao;),desenhar(Ljava.awt.Graphics;Ljava.awt.Color;),Figura(),getFormas()">
+    <children xsi:type="editmodel:CompartmentEditModel" size="190,18">
+      <children xsi:type="editmodel:AttributeEditModel" name="listaFormasPlotaveis" id="pacote_11877_12643.modelo/FormaPlotavel@listaFormasPlotaveis+pacote_11877_12643.modelo/Figura@|pacote_11877_12643.modelo/FormaPlotavel#listaFormasPlotaveis"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="448,126">
+      <children xsi:type="editmodel:MethodEditModel" name="Figura" id="pacote_11877_12643.modelo/Figura#Figura()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="add" id="pacote_11877_12643.modelo/Figura#add(Lpacote_11877_12643.modelo.FormaPlotavel;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="desenhar" id="pacote_11877_12643.modelo/Figura#desenhar(Ljava.awt.Graphics;Ljava.awt.Color;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="fazTransformacao" id="pacote_11877_12643.modelo/Figura#fazTransformacao(Lpacote_11877_12643.modelo.Transformacao;Lpacote_11877_12643.modelo.Ponto;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="fazTransformacao" id="pacote_11877_12643.modelo/Figura#fazTransformacao(Lpacote_11877_12643.modelo.Transformacao;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getFormas" id="pacote_11877_12643.modelo/Figura#getFormas()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="valida" id="pacote_11877_12643.modelo/Figura#valida(Lpacote_11877_12643.modelo.Figura;II)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" showMethodsParameterNames="true" showMethodsParameterKinds="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" showAssociationMember="true" showMethods="true" showAttributes="true" showLiterals="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.2/@sourceConnections.0" name="Ponto" location="670,360" size="266,223" id="pacote_11877_12643.modelo/Ponto" runTimeClassModel="getX(),Ponto(II),compareTo(Ljava.lang.Object;),desenhar(Ljava.awt.Graphics;Ljava.awt.Color;),getY(),equals(Ljava.lang.Object;),y,x">
+    <children xsi:type="editmodel:CompartmentEditModel" size="42,36">
+      <children xsi:type="editmodel:AttributeEditModel" name="x" id="pacote_11877_12643.modelo/Ponto#x"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="y" id="pacote_11877_12643.modelo/Ponto#y"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="243,108">
+      <children xsi:type="editmodel:MethodEditModel" name="Ponto" id="pacote_11877_12643.modelo/Ponto#Ponto(II)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="compareTo" id="pacote_11877_12643.modelo/Ponto#compareTo(Ljava.lang.Object;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="desenhar" id="pacote_11877_12643.modelo/Ponto#desenhar(Ljava.awt.Graphics;Ljava.awt.Color;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="equals" id="pacote_11877_12643.modelo/Ponto#equals(Ljava.lang.Object;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getX" id="pacote_11877_12643.modelo/Ponto#getX()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getY" id="pacote_11877_12643.modelo/Ponto#getY()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" showMethodsParameterNames="true" showMethodsParameterKinds="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" showAssociationMember="true" showMethods="true" showAttributes="true" showLiterals="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="FormaPlotavel" location="670,100" size="266,169" id="pacote_11877_12643.modelo/FormaPlotavel" runTimeClassModel="validar(II),listaPontos,FormaPlotavel(),desenhar(Ljava.awt.Graphics;Ljava.awt.Color;),getListaPontos()">
+    <children xsi:type="editmodel:CompartmentEditModel" size="104,18">
+      <children xsi:type="editmodel:AttributeEditModel" name="listaPontos" id="pacote_11877_12643.modelo/Ponto@listaPontos+pacote_11877_12643.modelo/FormaPlotavel@|pacote_11877_12643.modelo/Ponto#listaPontos"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="243,72">
+      <children xsi:type="editmodel:MethodEditModel" name="FormaPlotavel" id="pacote_11877_12643.modelo/FormaPlotavel#FormaPlotavel()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="desenhar" id="pacote_11877_12643.modelo/FormaPlotavel#desenhar(Ljava.awt.Graphics;Ljava.awt.Color;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getListaPontos" id="pacote_11877_12643.modelo/FormaPlotavel#getListaPontos()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="validar" id="pacote_11877_12643.modelo/FormaPlotavel#validar(II)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="pacote_11877_12643.modelo/Ponto@listaPontos+pacote_11877_12643.modelo/FormaPlotavel@" source="//@children.2" target="//@children.1" targetEnd="//@children.2/@sourceConnections.0/@children.2" label="//@children.2/@sourceConnections.0/@children.0" sourceEnd="//@children.2/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,13" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="133,169" id="pacote_11877_12643.modelo/Ponto@listaPontos+pacote_11877_12643.modelo/FormaPlotavel@|pacote_11877_12643.modelo/FormaPlotavel#" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="listaPontos" location="133,0" id="pacote_11877_12643.modelo/Ponto@listaPontos+pacote_11877_12643.modelo/FormaPlotavel@|pacote_11877_12643.modelo/Ponto#listaPontos" multiplicityLabel="//@children.2/@sourceConnections.0/@children.2/@children.1" roleLabel="//@children.2/@sourceConnections.0/@children.2/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" # listaPontos" location="810,340" size="64,13" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="*" location="792,340" size="4,13" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+      </children>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="pacote_11877_12643.modelo/FormaPlotavel@listaFormasPlotaveis+pacote_11877_12643.modelo/Figura@" source="//@children.2" target="//@children.0" targetEnd="//@children.2/@sourceConnections.1/@children.2" label="//@children.2/@sourceConnections.1/@children.0" sourceEnd="//@children.2/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,13" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="listaFormasPlotaveis" location="0,84" id="pacote_11877_12643.modelo/FormaPlotavel@listaFormasPlotaveis+pacote_11877_12643.modelo/Figura@|pacote_11877_12643.modelo/FormaPlotavel#listaFormasPlotaveis" attachSource="true" multiplicityLabel="//@children.2/@sourceConnections.1/@children.1/@children.1" roleLabel="//@children.2/@sourceConnections.1/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" # listaFormasPlotaveis" location="553,164" size="110,13" fontInfo="Arial-8-0" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="*" location="659,191" size="4,13" fontInfo="Arial-8-0" anchorKind="FirstPart"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="471,134" id="pacote_11877_12643.modelo/FormaPlotavel@listaFormasPlotaveis+pacote_11877_12643.modelo/Figura@|pacote_11877_12643.modelo/Figura#"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" showMethodsParameterNames="true" showMethodsParameterKinds="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" showAssociationMember="true" showMethods="true" showAttributes="true" showLiterals="true"/>
+  </children>
+  <diagramOptions xsi:type="options:ClassDiagramOptions" interactive="false" level="-1" showScope="InPackage" properties="wireOptions=2"/>
+  <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="10,10" gridOrigin="0,0" rulerUnit="pixel">
+    <leftRuler/>
+    <topRuler/>
+  </boardSetting>
+  <classDiagramPreferences xsi:type="editmodel:UMLClassDiagramPreference" showMethodsParameterTypes="true" showMethodsReturnType="true" showMethodsParameterNames="true" showMethodsParameterKinds="true" attributeSorter="Natural" methodSorter="Natural" showClassStereotype="true" showPackageStereotype="true" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" showInterfaceStereotype="true" showAssociationMember="true" showMethods="true" showAttributes="true" showLiterlas="true"/>
+</editmodel:ClassDiagramEditModel>
